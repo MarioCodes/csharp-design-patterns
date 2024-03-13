@@ -1,7 +1,5 @@
-using crud.Configuration;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+using strategyPattern.Models;
+using strategyPattern.Models.algorithms.implementations;
 
 namespace crud
 {
@@ -9,25 +7,11 @@ namespace crud
     {
         public static void Main(string[] args)
         {
-            var host = CreateHostBuilder(args).Build();
-
-
-            using(var scope = host.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-                var context = services.GetRequiredService<AppDbContext>();
-
-                DataGenerator.Initialize(services);
-            }
-
-            host.Run();
+            Duck duck = new MallardDuck(new Quack(), new FlyNoWay());
+            duck.PerformQuack();
+            duck.PerformFly();
+            duck.Display();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
     }
 }
