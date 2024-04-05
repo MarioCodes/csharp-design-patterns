@@ -1,5 +1,12 @@
 # Software architecture patterns - implemented in csharp
 
+Design principles:  
+* Identify the aspects of your application that vary and separate them from what stays the same
+* Program to an interface, not an implementation
+* Favor composition over inheritance -> has-a may be better than is-a
+* Strive for loosely coupled designs between objects that interact
+* Classes should be open for extension, but closed for modification
+
 ## Strategy pattern
 Define una familia de algoritmos, encapsulando cada uno de ellos y los hace intercambiables en runtime (configuración), independientemente de los clientes que los utilizan.  
 Útil para implementar distintas variaciones de comportamiento dentro de una clase. 
