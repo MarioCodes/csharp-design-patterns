@@ -1,5 +1,6 @@
-using template.Models;
-using template.Models.algorithms.implementations;
+using observerPattern.observers;
+using observerPattern.observers.@interface;
+using observerPattern.Services;
 
 namespace template
 {
@@ -7,10 +8,12 @@ namespace template
     {
         public static void Main(string[] args)
         {
-            Duck duck = new MallardDuck(new Quack(), new FlyNoWay());
-            duck.PerformQuack();
-            duck.PerformFly();
-            duck.Display();
+            WeatherData weatherData = new WeatherData();
+            DisplayElement currentDisplay = new CurrentConditionsDisplay(weatherData);
+            DisplayElement futureDisplay = new FutureConditionsDisplay(weatherData);
+
+            weatherData.SetMeasurements(80, 65, 30.4f);
+            weatherData.SetMeasurements(40, 25, 28.4f);
         }
 
     }
