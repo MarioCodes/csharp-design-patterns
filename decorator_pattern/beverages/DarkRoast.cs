@@ -2,6 +2,7 @@
 
 namespace decoratorPattern.beverages
 {
+    // this are the objects we're going to, dynamically, add new behaviour
     public class DarkRoast : Beverage
     {
         public DarkRoast()
