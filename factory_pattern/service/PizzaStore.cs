@@ -1,4 +1,4 @@
-﻿using factoryPattern.pizza;
+﻿using factoryPattern.models.pizzas;
 
 namespace factoryPattern.service
 {
