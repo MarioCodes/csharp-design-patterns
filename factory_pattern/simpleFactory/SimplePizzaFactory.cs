@@ -1,4 +1,5 @@
 ﻿using factoryPattern.pizza;
+using factoryPattern.simpleFactory.models;
 
 namespace factoryPattern.simpleFactory
 {
