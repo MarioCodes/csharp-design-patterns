@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "singletonPattern": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
