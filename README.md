@@ -17,3 +17,7 @@ Facilita la notificación de cambios en un objeto a múltiples observadores.
 
 ## Decorator pattern
 Permite añadir nuevas funcionalidades o responsabilidades a objetos de forma dinámica sin modificar su estructura interna. Funciona mediante wrappers que agregan comportamientos antes o después de delegar llamadas al objeto original.  
+
+## Factory pattern
+Encapsula la creación de objetos, permitiendo flexibilidad en los tipos creados. 
+Útil para cuando se trabaja con familias de objetos relacionados y se desea que todos los objetos que tienen que cooperar entre sí, provengan de la misma familia o tipo. 
