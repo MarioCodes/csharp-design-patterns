@@ -41,12 +41,13 @@ WeatherData weatherData = new WeatherData();
 DisplayElement currentDisplay = new CurrentConditionsDisplay(weatherData);
 DisplayElement forecastDisplay = new ForecastDisplay(weatherData);
 
-weatherData.SetMeasurements(80, 65, 30.4f);
-weatherData.SetMeasurements(40, 25, 28.5f);
-// SetMeasurements calls NotifyObservers() and this calls Update() for all observers
+// SetMeasurements() calls NotifyObservers() and this calls Update() for all observers
 // on Update() it calls Display() to see the change. this prints:
+weatherData.SetMeasurements(80, 65, 30.4f);
 //   currentConditionsDisplay: temp 80, humidity 65%
 //   forecast display based on pressure: temp 80, humidity 65%
+
+weatherData.SetMeasurements(40, 25, 28.5f);
 //   currentConditionsDisplay: temp 40, humidity 25%
 //   forecast display based on pressure: temp 40, humidity 25%
 ~~~
