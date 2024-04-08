@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-04-08T09:23:48.995Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="hO-rVb05aGN_HaPbVd0l" version="24.2.0" type="device">
+<mxfile host="app.diagrams.net" modified="2024-04-08T09:30:24.311Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="HX10WbDxUpCTVt49Nn49" version="24.2.0" type="device">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="2044" dy="2273" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -166,15 +166,6 @@
         </mxCell>
         <mxCell id="8eBEiztrSXnsMm5_wwWA-61" value="all these algorithms are interchangeable on runtime" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="650" y="150" width="380" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="8eBEiztrSXnsMm5_wwWA-66" value="" style="group" vertex="1" connectable="0" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="150" y="680" width="390" height="390" as="geometry" />
-        </mxCell>
-        <mxCell id="8eBEiztrSXnsMm5_wwWA-62" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="8eBEiztrSXnsMm5_wwWA-66">
-          <mxGeometry width="390" height="390" as="geometry" />
-        </mxCell>
-        <mxCell id="8eBEiztrSXnsMm5_wwWA-65" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Code example - how to use it!&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;Duck duck = new MallardDuck(new Quack(), new FlyNoWay());&lt;/p&gt;&lt;p&gt;duck.PerformQuack(); // quacks like a duck&lt;/p&gt;&lt;p&gt;duck.PerformFly(); // cannot fly&lt;/p&gt;&lt;p&gt;duck.Display(); // looks like a MallardDuck&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Duck duck2 = new RedheadDuck(new Squeak(), new FlyWithWings());&lt;/p&gt;&lt;p&gt;duck2.PerformQuack(); // squaks&lt;/p&gt;&lt;p&gt;duck2.PerformFly(); // flying with wings&lt;/p&gt;&lt;p&gt;duck2.Display(); // looks like a Redhead Duck&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="8eBEiztrSXnsMm5_wwWA-66">
-          <mxGeometry width="390" height="390" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
