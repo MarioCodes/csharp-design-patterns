@@ -1,14 +1,16 @@
-﻿using strategyPattern.Models.algorithms.implementations;
+﻿using strategyPattern.Models.algorithms.interfaces;
 using System;
 
 namespace strategyPattern.Models
 {
     public class RedheadDuck : Duck
     {
-        public RedheadDuck()
+        public RedheadDuck(
+            IQuackBehaviour quack,
+            IFlyBehaviour fly)
         {
-            quackBehaviour = new Quack();
-            flyBehaviour = new FlyWithWings();
+            quackBehaviour = quack;
+            flyBehaviour = fly;
         }
 
         public override void Display()

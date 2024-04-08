@@ -1,5 +1,5 @@
 using strategyPattern.Models;
-using strategyPattern.Models.algorithms.implementations;
+using strategyPattern.Models.algorithms;
 
 namespace crud
 {
@@ -11,6 +11,11 @@ namespace crud
             duck.PerformQuack();
             duck.PerformFly();
             duck.Display();
+
+            Duck duck2 = new RedheadDuck(new Squeak(), new FlyWithWings());
+            duck2.PerformQuack();
+            duck2.PerformFly();
+            duck2.Display();
         }
 
     }

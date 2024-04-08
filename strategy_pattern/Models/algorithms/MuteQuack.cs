@@ -1,7 +1,7 @@
 ﻿using strategyPattern.Models.algorithms.interfaces;
 using System;
 
-namespace strategyPattern.Models.algorithms.implementations
+namespace strategyPattern.Models.algorithms
 {
     public class MuteQuack : IQuackBehaviour
     {

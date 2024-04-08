@@ -1,12 +1,12 @@
-﻿using strategyPattern.Models.algorithms.implementations;
-using strategyPattern.Models.algorithms.interfaces;
+﻿using strategyPattern.Models.algorithms.interfaces;
 using System;
 
 namespace strategyPattern.Models
 {
     public class MallardDuck : Duck
     {
-        public MallardDuck(IQuackBehaviour quack,
+        public MallardDuck(
+            IQuackBehaviour quack,
             IFlyBehaviour fly)
         {
             quackBehaviour = quack;
