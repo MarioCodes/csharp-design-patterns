@@ -10,7 +10,22 @@ Design principles:
 ## Strategy pattern
 Define una familia de algoritmos, encapsulando cada uno de ellos y los hace intercambiables en runtime (configuración), independientemente de los clientes que los utilizan.  
 Útil para cambiar algoritmos en tiempo de ejecución y elegir la estrategia más adecuada según el contexto. 
- 
+
+![strategy pattern class diagram](_images/strategy_pattern.drawio.png)
+
+*code example - how to use it!*
+~~~ csharp
+Duck duck = new MallardDuck(new Quack(), new FlyNoWay());
+duck.PerformQuack(); // quacks like a duck
+duck.PerformFly(); // cannot fly
+duck.Display(); // looks like a MallardDuck
+
+Duck duck2 = new RedheadDuck(new Squak(), new FlyWithWings());
+duck2.PerformQuack(); // squeaks
+duck2.PerformFly(); // flying with wings
+duck2.Display(); // looks like a Redhead Duck
+~~~
+
 ## Observer pattern
 Define una relacion, de una a muchos, entre un sujeto con estado y sus observadores de manera que, cuando el sujeto cambia de estado, todos sus observadores son notificados y actualizados automáticamente.  
 Facilita la notificación de cambios en un objeto a múltiples observadores. 
