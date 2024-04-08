@@ -20,7 +20,8 @@ Permite añadir nuevas funcionalidades o responsabilidades a objetos de forma di
 
 ## Factory pattern
 Define una interfaz para crear un objeto, pero deja a las subclases decidir que clase instanciar. Permite a una clase diferir la instanciación a sus subclases. 
-Útil para cuando se trabaja con familias de objetos relacionados y se desea que todos los objetos que tienen que cooperar entre sí, provengan de la misma familia o tipo. 
+Útil para cuando se trabaja con familias de objetos relacionados y se desea que todos los objetos que tienen que cooperar entre sí, provengan de la misma familia o tipo.  
+Permite utilizar diferentes implementaciones para diferentes situaciones.  
 
 ## Singleton pattern
 Asegura que una clase tiene una única instancia y ofrece un punto de acceso global a la misma
