@@ -30,7 +30,26 @@ duck2.Display(); // looks like a Redhead Duck
 
 ## Observer pattern
 Define una relacion, de una a muchos, entre un sujeto con estado y sus observadores de manera que, cuando el sujeto cambia de estado, todos sus observadores son notificados y actualizados automáticamente.  
+
 Facilita la notificación de cambios en un objeto a múltiples observadores. 
+
+![observer pattern class diagram](_images/observer_pattern.drawio.png)
+
+*code example - how to use it!*
+~~~ csharp
+WeatherData weatherData = new WeatherData();
+DisplayElement currentDisplay = new CurrentConditionsDisplay(weatherData);
+DisplayElement forecastDisplay = new ForecastDisplay(weatherData);
+
+weatherData.SetMeasurements(80, 65, 30.4f);
+weatherData.SetMeasurements(40, 25, 28.5f);
+// SetMeasurements calls NotifyObservers() and this calls Update() for all observers
+// on Update() it calls Display() to see the change. this prints:
+//   currentConditionsDisplay: temp 80, humidity 65%
+//   forecast display based on pressure: temp 80, humidity 65%
+//   currentConditionsDisplay: temp 40, humidity 25%
+//   forecast display based on pressure: temp 40, humidity 25%
+~~~
 
 ## Decorator pattern
 Permite añadir nuevas funcionalidades o responsabilidades a objetos de forma dinámica sin modificar su estructura interna. Funciona mediante wrappers que agregan comportamientos antes o después de delegar llamadas al objeto original.  

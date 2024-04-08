@@ -10,7 +10,7 @@ namespace template
         {
             WeatherData weatherData = new WeatherData();
             DisplayElement currentDisplay = new CurrentConditionsDisplay(weatherData);
-            DisplayElement futureDisplay = new FutureConditionsDisplay(weatherData);
+            DisplayElement forecastDisplay = new ForecastDisplay(weatherData);
 
             weatherData.SetMeasurements(80, 65, 30.4f);
             weatherData.SetMeasurements(40, 25, 28.4f);
