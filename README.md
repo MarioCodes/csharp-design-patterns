@@ -60,6 +60,27 @@ weatherData.SetMeasurements(40, 25, 28.5f);
 ## Decorator pattern
 Permite añadir nuevas funcionalidades o responsabilidades a objetos de forma dinámica sin modificar su estructura interna. Funciona mediante wrappers que agregan comportamientos antes o después de delegar llamadas al objeto original.  
 
+![decorator pattern class diagram](_images/decorator_pattern.drawio.png)
+
+*code example - how to use it!*
+~~~ csharp
+Beverage beberage = new Espresso();
+Console.WriteLine($"{beverage.Description} {beverage.Cost()}");
+// Espresso $1,99
+
+Beverage2 = new DarkRoast();
+beverage2 = new Mocha(beverage2);
+Console.WriteLine($"{beverage2.Description} {beverage2.Cost()}");
+// Dark roast, Mocha $1,45
+
+Beverage3 = new HouseBlend();
+beverage3 = new Soy(beverage3);
+beverage3 = new Mocha(beverage3);
+beverage3 = new Whip(beverage3);
+Console.WriteLine($"{beverage3.Description} {beverage3.Cost()}");
+// House blend coffee, Soy, Mocha, Whip $1,74
+~~~
+
 ## Factory pattern
 Define una interfaz para crear un objeto, pero deja a las subclases decidir que clase instanciar. Permite a una clase diferir la instanciación a sus subclases. 
 Útil para cuando se trabaja con familias de objetos relacionados y se desea que todos los objetos que tienen que cooperar entre sí, provengan de la misma familia o tipo.  
