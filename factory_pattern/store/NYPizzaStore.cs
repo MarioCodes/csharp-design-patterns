@@ -1,5 +1,4 @@
 ﻿using factoryPattern.factory;
-using factoryPattern.models;
 using factoryPattern.models.pizzas;
 
 namespace factoryPattern.service
