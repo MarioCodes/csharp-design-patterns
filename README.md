@@ -58,7 +58,8 @@ weatherData.SetMeasurements(40, 25, 28.5f);
 ~~~
 
 ## Decorator pattern
-Permite añadir nuevas funcionalidades o responsabilidades a objetos de forma dinámica sin modificar su estructura interna. Funciona mediante wrappers que agregan comportamientos antes o después de delegar llamadas al objeto original.  
+Permite añadir nuevas funcionalidades a objetos de forma dinámica sin modificar su estructura interna.  
+Funciona mediante wrappers que agregan comportamientos antes o después de delegar llamadas al objeto original.  
 
 ![decorator pattern class diagram](_images/decorator_pattern.drawio.png)
 
@@ -82,7 +83,7 @@ Console.WriteLine($"{beverage3.Description} {beverage3.Cost()}");
 ~~~
 
 ## Factory pattern
-Define una interfaz para crear un objeto, pero deja a las subclases decidir que clase instanciar. Permite a una clase diferir la instanciación a sus subclases. 
+Define una interfaz para crear un objeto, pero deja a las subclases decidir que tipo instanciar. Permite a una clase diferir la instanciación a sus subclases. 
 Útil para cuando se trabaja con familias de objetos relacionados y se desea que todos los objetos que tienen que cooperar entre sí, provengan de la misma familia o tipo.  
 Permite utilizar diferentes implementaciones para diferentes situaciones.  
 
@@ -120,9 +121,8 @@ public class SingletonService
 ~~~
 
 ## Command pattern
-Encapsula la invocación de métodos. It allows to decouple the requester of an action from the object that actually performs the action. A command object encapsulates a request to do something on a specific object. 
-
-Encapsulates a request as an object, letting you parameterize other objects with different requests, queue or log requests, and support undoable operations. 
+Encapsula la invocación de métodos en un objeto independiente. Esto permite que los métodos de los Productores sean independientes de los métodos de los Consumidores.  
+Útil cuando los productores son diferentes entre sí. 
 
 ![command pattern class diagram](_images/command_pattern.drawio.png)
 
