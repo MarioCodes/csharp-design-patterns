@@ -1,6 +1,6 @@
 ﻿namespace commandPattern.Models
 {
-    public interface Command
+    public interface ICommand
     {
         public void Execute();
     }

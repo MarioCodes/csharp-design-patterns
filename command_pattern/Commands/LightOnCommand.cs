@@ -1,6 +1,6 @@
 ﻿namespace commandPattern.Models
 {
-    public class LightOnCommand : Command
+    public class LightOnCommand : ICommand
     {
         private Light _light;
 

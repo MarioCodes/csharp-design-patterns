@@ -2,23 +2,23 @@
 
 namespace commandPattern.Models
 {
-    public class Light
+    public class CeilingFan
     {
         private readonly string _location;
 
-        public Light(string location)
+        public CeilingFan(string location)
         {
             _location = location;
         }
 
         public void On()
         {
-            Console.WriteLine($"{_location} light is on");
+            Console.WriteLine($"{_location} ceiling fan is on");
         }
 
         public void Off()
         {
-            Console.WriteLine($"{_location} light is off");
+            Console.WriteLine($"{_location} ceiling fan off");
         }
     }
 }
