@@ -123,3 +123,40 @@ public class SingletonService
 Encapsula la invocación de métodos. It allows to decouple the requester of an action from the object that actually performs the action. A command object encapsulates a request to do something on a specific object. 
 
 Encapsulates a request as an object, letting you parameterize other objects with different requests, queue or log requests, and support undoable operations. 
+
+![command pattern class diagram](_images/command_pattern.drawio.png)
+
+*code example - how to use it!*
+~~~ csharp
+// set up
+RemoteControl remote = new RemoteControl();
+
+Light livingRoomLight = new Light("living room");
+Light kitchenLight = new Light("kitchen");
+GarageDoor garageDoor = new GarageDoor("");
+
+// light commands
+var livingRoomLightOn = new LightOnCommand(livingRoomLight);
+var livingRoomLightOff = new LightOffCommand(livingRoomLight);
+var kitchenLightOn = new LightOnCommand(kitchenLight);
+var kitchenLightOff = new LightOffCommand(kitchenLight);
+
+// garage door commands
+var garageDoorUp = new GarageDoorUpCommand(garageDoor);
+var garageDoorDown = new GarageDoorDownCommand(garageDoor);
+
+// load commands into programmable remote
+remote.SetCommand(0, livingRoomLightOn, livingRoomLightOff);
+remote.SetCommand(1, kitchenLightOn, kitchenLightOff);
+remote.SetCommand(2, garageDoorUp, garageDoorDown);
+
+// push buttons
+remote.OnButtonWasPushed(0); // living room light is on
+remote.OffButtonWasPushed(0); // living room light is off
+
+remote.OnButtonWasPushed(1); // kitchen light is on
+remote.OffButtonWasPushed(1); // kitchen light is off
+
+remote.OnButtonWasPushed(2); // garage door opens
+remote.OffButtonWasPushed(2); // garage door closes
+~~~
