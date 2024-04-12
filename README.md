@@ -118,3 +118,8 @@ public class SingletonService
   }
 }
 ~~~
+
+## Command pattern
+Encapsula la invocación de métodos. It allows to decouple the requester of an action from the object that actually performs the action. A command object encapsulates a request to do something on a specific object. 
+
+Encapsulates a request as an object, letting you parameterize other objects with different requests, queue or log requests, and support undoable operations. 
