@@ -183,3 +183,43 @@ turkeyAdapter.Quack();
 
 ## Façade pattern
 Wrapper de objetos, parecido al adapter pero el objetivo del façade es simplificar la interfaz. Este patrón esconde la complejidad de una o más clases detrás de una fachada. 
+
+## Template Method pattern
+Define el esqueleto de un algoritmo defiriendo algunos pasos a sus subclases. Permite a las subclases redefinir algunos pasos del algoritmo sin cambiar la estructura interna del mismo.  
+
+There's a version with a *hook* where it's possible to hide or omit parts of the algorithm depending on the subclass. 
+
+*code example - how to define it*
+~~~ csharp
+// abstract parent class which has the template method
+public abstract class CaffeineBeverage
+{
+  protected abstract void Brew();
+  protected abstract void AddCondiments();
+
+  // this is the template method itself. it's the method we call from the outside
+  // we mark as abstract the methods that are supplied by subclasses 
+  public void PrepareRecipe()
+  {
+    BoilWater();
+    Brew();
+    PourInCup();
+    AddCondiments();
+  }
+
+  private void BoilWater() { ... }
+  private void PourInCup() { ... }
+}
+
+public class Coffee : CaffeineBeverage
+{
+  protected override void Brew() { ... }
+  protected override void AddCondiments() { ... }
+}
+
+public class Tea : CaffeineBeverage
+{
+  protected override void Brew() { ... }
+  protected override void AddCondiments() { ... }
+}
+~~~
