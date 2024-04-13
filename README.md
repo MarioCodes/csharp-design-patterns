@@ -160,3 +160,9 @@ remote.OffButtonWasPushed(1); // kitchen light is off
 remote.OnButtonWasPushed(2); // garage door opens
 remote.OffButtonWasPushed(2); // garage door closes
 ~~~
+
+## Adapter pattern
+Permite adaptar un diseño que espera una interfaz, a una clase que implementa una interfaz diferente.
+
+## Façade pattern
+Wrapper de objetos para simplificar su interfaz. 
