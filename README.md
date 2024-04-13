@@ -182,4 +182,4 @@ turkeyAdapter.Quack();
 ~~~
 
 ## Façade pattern
-Wrapper de objetos para simplificar su interfaz. 
+Wrapper de objetos, parecido al adapter pero el objetivo del façade es simplificar la interfaz. Este patrón esconde la complejidad de una o más clases detrás de una fachada. 
