@@ -164,6 +164,8 @@ remote.OffButtonWasPushed(2); // garage door closes
 ## Adapter pattern
 Permite adaptar un diseño que espera una interfaz, a una clase que implementa otra interfaz completamente diferente. Permite trabajar juntas a clases que de otro modo serían incompatibles.
 
+![adapter pattern class diagram](_images/adapter_pattern.drawio.png)
+
 *code example - how to use it!*
 ~~~ csharp
 // we have a Duck interface which Quacks
