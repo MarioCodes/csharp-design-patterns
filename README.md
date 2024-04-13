@@ -185,7 +185,9 @@ turkeyAdapter.Quack();
 Wrapper de objetos, parecido al adapter pero el objetivo del façade es simplificar la interfaz. Este patrón esconde la complejidad de una o más clases detrás de una fachada. 
 
 ## Template Method pattern
-It defines the steps of an algorithm and allows subclasses to provide the implementation for one or more steps. 
+Define el esqueleto de un algoritmo defiriendo algunos pasos a sus subclases. Permite a las subclases redefinir algunos pasos del algoritmo sin cambiar la estructura interna del mismo.  
+
+There's a version with a *hook* where it's possible to hide or omit parts of the algorithm depending on the subclass. 
 
 *code example - how to define it*
 ~~~ csharp
