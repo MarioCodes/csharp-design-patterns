@@ -223,3 +223,9 @@ public class Tea : CaffeineBeverage
   protected override void AddCondiments() { ... }
 }
 ~~~
+
+### Strategy vs template method patterns
+They're similar in their purposes.  
+
+* strategy pattern: define una familia de algoritmos y los hace intercambiables en runtime. Como cada algoritmo está encapsulado, el cliente puede usar varios algoritmos fácilmente. Es más flexible porque usa composición.
+* template method pattern: define la base de un algoritmo, pero delega partes del trabajo en sus subclases. Permite tener diferentes implementaciones de un algoritmo, pero mantener el control sobre su estructura. Evita la repetición de código. 
