@@ -189,7 +189,7 @@ Define el esqueleto de un algoritmo defiriendo algunos pasos a sus subclases. Pe
 
 There's a version with a *hook* where it's possible to hide or omit parts of the algorithm depending on the subclass. 
 
-*code example - how to define it*
+*code example - how to **define** it*
 ~~~ csharp
 // abstract parent class which has the template method
 public abstract class CaffeineBeverage
@@ -228,4 +228,35 @@ public class Tea : CaffeineBeverage
 They're similar in their purposes.  
 
 * strategy pattern: define una familia de algoritmos y los hace intercambiables en runtime. Como cada algoritmo está encapsulado, el cliente puede usar varios algoritmos fácilmente. Es más flexible porque usa composición.
-* template method pattern: define la base de un algoritmo, pero delega partes del trabajo en sus subclases. Permite tener diferentes implementaciones de un algoritmo, pero mantener el control sobre su estructura. Evita la repetición de código. 
+* template method pattern: define la base de un algoritmo, pero delega partes del trabajo en sus subclases. Permite tener diferentes implementaciones de un algoritmo, pero mantener el control sobre su estructura. Evita la repetición de código.
+
+## Iterator pattern
+Proporciona una manera de acceder secuencialmente a los elementos de un objeto, sin exponer su representación subyacente (nos da igual igual si es una List o un Array o su implementación).  
+Encapsula la lógica de navegación. 
+
+*code example - how to use it*
+~~~ csharp
+// this holds List<MenuItem> ... 
+var pancakeHouseMenu = new PancakeHouseMenu();
+Iterator pancakeIterator = pancakeHouseMenu.CreateIterator();
+
+// this holds MenuItem[] ...
+var dinerMenu = new DinerMenu();
+Iterator dinerIterator = dinerMenu.CreateIterator();
+
+// ... but we're able to iterate them both with the same method
+PrintMenu(pancakeIterator);
+PrintMenu(dinerIterator);
+~~~
+
+*ejemplo del metodo para hacer print*
+~~~ csharp
+private static void PrintMenu(Iterator iterator)
+{
+    while(iterator.HasNext())
+    {
+        MenuItem item = iterator.Next();
+        Console.WriteLine($"menuItem {item._name}");
+    }
+}
+~~~
