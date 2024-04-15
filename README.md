@@ -234,6 +234,8 @@ They're similar in their purposes.
 Proporciona una manera de acceder secuencialmente a los elementos de un objeto, sin exponer su representación subyacente (nos da igual igual si es una List o un Array o su implementación).  
 Encapsula la lógica de navegación. 
 
+![iterator pattern class diagram](_images/iterator_pattern.drawio.png)
+
 *code example - how to use it*
 ~~~ csharp
 // this holds List<MenuItem> ... 
