@@ -26,7 +26,7 @@ namespace iterator
             while(iterator.HasNext())
             {
                 MenuItem item = iterator.Next();
-                Console.WriteLine($"menuItem {item._name}");
+                Console.WriteLine($"menuItem {item.Name}");
             }
         }
 

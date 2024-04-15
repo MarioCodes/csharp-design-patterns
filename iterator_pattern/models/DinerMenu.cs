@@ -8,11 +8,11 @@ namespace iteratorPattern.models
         private const int MAX_ITEMS = 6;
 
         private int _numberOfItems = 0;
-        public MenuItem[] _menuItems { get; set; }
+        public MenuItem[] MenuItems { get; private set; }
 
         public DinerMenu()
         {
-            _menuItems = new MenuItem[MAX_ITEMS];
+            MenuItems = new MenuItem[MAX_ITEMS];
 
             AddItem("Vegetarian BLT", "(fake) Bacon with lettuce and tomato on whole wheat", true, 2.99);
             AddItem("BLT", "Bacon with lettuce & tomato on whole wheat", false, 2.99);
@@ -29,14 +29,14 @@ namespace iteratorPattern.models
             }
             else
             {
-                _menuItems[_numberOfItems] = menuItem;
+                MenuItems[_numberOfItems] = menuItem;
                 _numberOfItems++;
             }
         }
 
         public Iterator CreateIterator()
         {
-            return new DinerMenuIterator(_menuItems);
+            return new DinerMenuIterator(MenuItems);
         }
 
     }

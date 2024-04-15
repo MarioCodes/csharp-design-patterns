@@ -4,11 +4,11 @@ namespace iteratorPattern.iterator
 {
     public class PancakeHouseMenu
     {
-        public List<MenuItem> _menuItems { get; set; }
+        public List<MenuItem> MenuItems { get; set; }
 
         public PancakeHouseMenu()
         {
-            _menuItems = new List<MenuItem>();
+            MenuItems = new List<MenuItem>();
 
             AddItem("KB Pancake breakfast", "Pancakes with scramblers eggs, and toast", true, 2.99);
             AddItem("Regular pancake breakfast", "Pancakes with fried eggs, sausage", false, 2.99);
@@ -19,12 +19,12 @@ namespace iteratorPattern.iterator
         public void AddItem(string name, string description, bool vegetarian, double price)
         {
             MenuItem menuItem = new MenuItem(name, description, vegetarian, price);
-            _menuItems.Add(menuItem);
+            MenuItems.Add(menuItem);
         }
 
         public Iterator CreateIterator()
         {
-            return new PancakeHouseIterator(_menuItems);
+            return new PancakeHouseIterator(MenuItems);
         }
     }
 }
