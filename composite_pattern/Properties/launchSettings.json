@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "compositePattern": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
