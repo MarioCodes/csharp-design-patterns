@@ -179,8 +179,8 @@ Turkey turkey = new WildTurkey();
 turkey.Gobble();
 
 // now we have a Turkey which knows how to Quack
-Duck turkeyAdapter = new TurkeyAdapter(turkey);
-turkeyAdapter.Quack();
+Duck hiddenTurkey = new TurkeyAdapter(turkey);
+hiddenTurkey.Quack();
 ~~~
 
 ## Façade pattern
