@@ -122,7 +122,8 @@ public class SingletonService
 ~~~
 
 ## Command pattern
-Encapsula la invocación de métodos en un objeto independiente. Esto permite que los métodos de los Productores sean independientes de los métodos de los Consumidores.  
+Envuelve una solicitud como un objeto. Esto permite parametrizar objetos con diferentes solicitudes. Facilita la implementación de deshacer operaciones y rehacerlas.   
+
 Útil cuando los productores son diferentes entre sí. 
 
 ![command pattern class diagram](_images/command_pattern.drawio.png)
