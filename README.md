@@ -69,12 +69,12 @@ Beverage beberage = new Espresso();
 Console.WriteLine($"{beverage.Description} {beverage.Cost()}");
 // Espresso $1,99
 
-Beverage2 = new DarkRoast();
+Beverage beverage2 = new DarkRoast();
 beverage2 = new Mocha(beverage2);
 Console.WriteLine($"{beverage2.Description} {beverage2.Cost()}");
 // Dark roast, Mocha $1,45
 
-Beverage3 = new HouseBlend();
+Beverage beverage3 = new HouseBlend();
 beverage3 = new Soy(beverage3);
 beverage3 = new Mocha(beverage3);
 beverage3 = new Whip(beverage3);
@@ -83,7 +83,8 @@ Console.WriteLine($"{beverage3.Description} {beverage3.Cost()}");
 ~~~
 
 ## Factory pattern
-Define una interfaz para crear un objeto, pero deja a las subclases decidir que tipo instanciar. Permite a una clase diferir la instanciación a sus subclases. 
+Define una interfaz para crear un objeto, pero deja a las subclases decidir que tipo instanciar. Permite a una clase diferir la instanciación a sus subclases.  
+
 Útil para cuando se trabaja con familias de objetos relacionados y se desea que todos los objetos que tienen que cooperar entre sí, provengan de la misma familia o tipo.  
 Permite utilizar diferentes implementaciones para diferentes situaciones.  
 
