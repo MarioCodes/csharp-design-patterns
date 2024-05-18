@@ -266,3 +266,7 @@ private static void PrintMenu(Iterator iterator)
     }
 }
 ~~~
+
+## State pattern
+Permite hacer un seguimiento del estado interno de un objeto y alterar el comportamiento del objeto en función de este estado interno.
+
