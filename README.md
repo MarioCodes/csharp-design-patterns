@@ -272,6 +272,47 @@ Permite hacer un seguimiento del estado interno de un objeto y alterar el compor
 
 ![state pattern class diagram](_images/state_pattern.drawio.png)
 
+*code example - how to use it*
+~~~ csharp
+public class GumballMachine : IGumballMachine
+{
+  // possible states
+  // the states themselves encapsulate all details on how to execute operations
+  public IState _noQuarterState {get; set;}
+  public IState _hasQuarterState {get; set;}
+  public IState _soldState {get; set;}
+
+  // current state
+  public IState _state {get; set;}
+
+  public GumballMachine()
+  {
+    _noQuarterState = new NoQuarterState(this);
+    _hasQuarterState = new HasQuarterState(this);
+    _soldState = new SoldState(this);
+  }
+
+  // we delegate all operations to the state itself
+  public void InsertQuarter()
+  {
+    _state.InsertQuarter();
+  }
+
+  public void TurnCrank()
+  {
+    _state.TurnCrank();
+  }
+}
+~~~
+
+*from the outside of the context there's no visibility to the internal state*
+~~~ csharp
+IGumballMachine machine = new GumballMachine(1);
+machine.InsertQuarter();
+machine.TurnCrank();
+machine.ReleaseBall();
+~~~
+
 ### Strategy vs state method patterns
 They're similar but they differ in their purposes.  
 
