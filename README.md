@@ -271,3 +271,9 @@ private static void PrintMenu(Iterator iterator)
 Permite hacer un seguimiento del estado interno de un objeto y alterar el comportamiento del objeto en función de este estado interno.
 
 ![state pattern class diagram](_images/state_pattern.drawio.png)
+
+### Strategy vs state method patterns
+They're similar but they differ in their purposes.  
+
+* strategy pattern: <ins>define una familia de algoritmos o estrategias</ins>. Se pueden cambiar en runtime, pero por lo general siempre hay un algoritmo o estrategia más apropiado para contexto y es raro que cambie.  
+* state pattern: <ing>define una familia de comportamientos</ins> encapsulados en estados. Estos estados cambian en función del estado interno del contexto. Todo queda encapsulado dentro del contexto. El cliente no sabe nada del estado interno del contexto.
