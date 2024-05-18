@@ -186,6 +186,8 @@ hiddenTurkey.Quack();
 ## Façade pattern
 Wrapper de objetos, parecido al adapter pero el objetivo del façade es simplificar la interfaz. Este patrón esconde la complejidad de una o más clases detrás de una fachada. 
 
+![facade pattern class diagram](_images/facade_pattern.drawio.png)
+
 ## Template Method pattern
 Define el esqueleto de un algoritmo defiriendo algunos pasos a sus subclases. Permite a las subclases redefinir algunos pasos del algoritmo sin cambiar la estructura interna del mismo.  
 
