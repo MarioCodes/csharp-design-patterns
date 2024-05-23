@@ -2,6 +2,8 @@
 
 *(disclaimer: all this info is for personal use and comes from my understanding from the book [Head First Design Patterns](https://www.oreilly.com/library/view/head-first-design/0596007124/). For more info or details please purchase the book to support the original authors)*
 
+[Nice page to check for more details on patterns](https://refactoring.guru/design-patterns)
+
 ## Design principles  
 * Identify the aspects of your application that vary and separate them from what stays the same
 * Program to an interface, not an implementation
