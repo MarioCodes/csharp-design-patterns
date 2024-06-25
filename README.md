@@ -2,6 +2,8 @@
 
 *(disclaimer: all this info is for personal use and comes from my understanding from the book [Head First Design Patterns](https://www.oreilly.com/library/view/head-first-design/0596007124/). For more info or details please purchase the book to support the original authors)*
 
+[Nice page to check for more details on patterns](https://refactoring.guru/design-patterns)
+
 ## Design principles  
 * Identify the aspects of your application that vary and separate them from what stays the same
 * Program to an interface, not an implementation
@@ -353,3 +355,7 @@ public class GumballProxy : IGumballProxy
 ### Remote Proxy pattern
 Una variedad del proxy pattern. Actúa como un sustituto de otro objeto para controlar el acceso a él. Se usa para conectar y comunicarse con un objeto que se encuentra en una red diferente.  
 Para el cliente es como si se comunicara con el objeto real, pero en realidad el proxy está haciendo un forward de la comunicación sobre la red. 
+
+## Composite pattern
+Lets you compose objects into tree structures and then work with these structures as if they were individual objects.  
+It's a popular solution for most problems that require building a tree structure.  
