@@ -1,7 +1,4 @@
-using adapterPattern.adapter;
-using adapterPattern.duck;
-using adapterPattern.turkey;
-using System;
+using builderPattern.baseclass;
 
 namespace builder
 {
@@ -9,22 +6,21 @@ namespace builder
     {
         public static void Main(string[] args)
         {
-            Duck duck = new MallardDuck();
-            Turkey turkey = new WildTurkey();
+            var director = new Director();
 
-            Duck turkeyAdapter = new TurkeyAdapter(turkey);
+            var builder = new CarBuilder();
+            director.ConstructSportsCar(builder);
+            Car car = builder.GetProduct();
 
-            Console.WriteLine("the turkey says...");
-            turkey.Gobble();
-            turkey.Fly();
+            var manualBuilder = new CarManualBuilder();
+            director.ConstructSportsCar(manualBuilder);
 
-            Console.WriteLine("\nthe duck says...");
-            duck.Quack();
-            duck.Fly();
-
-            Console.WriteLine("\nthe turkeyadapter says...");
-            turkeyAdapter.Quack();
-            turkeyAdapter.Fly();
+            /*
+             * The final product is often retrieved from a builder
+             * since the director isn't aware of concrete
+             * builders and products
+             */
+            Manual manual = manualBuilder.GetProduct();
         }
 
     }
