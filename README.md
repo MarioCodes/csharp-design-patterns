@@ -354,3 +354,36 @@ redCircle.Draw();
 Shape blueSquare = new Square(new BlueColor());
 blueSquare.Draw();
 ~~~
+
+## Builder pattern
+Patrón creacional que permite construir objetos de una gran complejidad, paso a paso. Permite producir diferentes tipos y representaciones de un objeto usando el mismo código para todos.  
+El patrón organiza la construcción en una serie de pasos opcionales. No necesitas llamarlos todos, solo los que hagan falta para la configuración particular de ese objeto.  
+Una pista para ver si renta implementarlo es si tenemos constructores interminables en código.  
+
+* `Builder` interface declara los pasos de construccion comunes para todos los tipos
+* `Concrete Builder` dispone de diferentes pasos según lo que construyamos. Puede producir productos que no sigan la interfaz común
+* `Product` son los objetos resultantes. Los productos producidos por diferentes builders no pertenencen a la misma jerarquia o interfaz
+* `Director` define el orden en el que llamar cada paso, para que puedas reutilizar configuraciones de productos
+
+~~~ csharp
+public class Car
+{
+
+}
+
+public class Manual
+{
+
+}
+~~~
+
+~~~ csharp
+public interface Builder
+{
+
+}
+~~~
+
+~~~ csharp
+
+~~~
