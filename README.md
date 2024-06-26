@@ -360,30 +360,79 @@ Patrón creacional que permite construir objetos de una gran complejidad, paso a
 El patrón organiza la construcción en una serie de pasos opcionales. No necesitas llamarlos todos, solo los que hagan falta para la configuración particular de ese objeto.  
 Una pista para ver si renta implementarlo es si tenemos constructores interminables en código.  
 
-* `Builder` interface declara los pasos de construccion comunes para todos los tipos
-* `Concrete Builder` dispone de diferentes pasos según lo que construyamos. Puede producir productos que no sigan la interfaz común
+* `Builder interface` declara los pasos de construccion comunes para todos los tipos
+* `Concrete Builder` dispone de diferentes pasos según lo que construyamos. Puede producir productos que no sigan la interfaz común. De él es de quien se obtiene el producto final.  
 * `Product` son los objetos resultantes. Los productos producidos por diferentes builders no pertenencen a la misma jerarquia o interfaz
 * `Director` define el orden en el que llamar cada paso, para que puedas reutilizar configuraciones de productos
 
 ~~~ csharp
 public class Car
 {
-
+  // ... detalles de coche
 }
 
 public class Manual
 {
-
+  // ... detalles del manual
 }
 ~~~
 
 ~~~ csharp
 public interface Builder
 {
-
+  public void Reset();
+  public void SetSeats(int seats);
+  public void SetEngine(string engine);
 }
 ~~~
 
 ~~~ csharp
+public class CarBuilder : Builder
+{
+  private Car _car;
 
+  public void Reset()
+  {
+    _car = new Car();
+  }
+  
+  public Car GetProduct()
+  {
+    Car builtCar = _car;
+    Reset();
+    return builtCar;
+  }
+
+  // ... and the same for the engine
+  public void SetSeats(int seats)
+  {
+    _car.Seats = seats;
+  }
+}
+~~~
+
+~~~ csharp
+/*
+ * The final product is often retrieved from a builder
+ * since the director isn't aware of concrete
+ * builders and products
+ */
+public class Director
+{
+  public void ConstructSportsCar(Builder builder)
+  {
+    builder.Reset();
+    builder.SetSeats(2);
+    builder.SetEngine("v12");
+  }  
+}
+~~~
+
+~~~ csharp
+// usage
+var director = new Director();
+var builder = new CarBuilder();
+
+director.ConstructSportsCar(builder);
+Car car = builder.GetProduct();
 ~~~
