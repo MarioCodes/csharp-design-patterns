@@ -1,4 +1,4 @@
-﻿namespace builderPattern.baseclass
+﻿namespace builderPattern.interfaces
 {
     public interface Builder
     {

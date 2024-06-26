@@ -1,4 +1,5 @@
-using builderPattern.baseclass;
+using builderPattern.builder;
+using builderPattern.entity;
 using System;
 
 namespace builder

@@ -1,4 +1,7 @@
-﻿namespace builderPattern.baseclass
+﻿using builderPattern.entity;
+using builderPattern.interfaces;
+
+namespace builderPattern.builder
 {
     public class CarBuilder : Builder
     {

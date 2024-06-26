@@ -1,5 +1,12 @@
-﻿namespace builderPattern.baseclass
+﻿using builderPattern.interfaces;
+
+namespace builderPattern.builder
 {
+    /*
+     * The final product is often retrieved from a builder
+     * since the director isn't aware of concrete
+     * builders and products
+     */
     public class Director
     {
         public void ConstructSportsCar(Builder builder)
