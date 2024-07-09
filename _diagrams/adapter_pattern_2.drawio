@@ -1,0 +1,55 @@
+<mxfile host="app.diagrams.net" modified="2024-07-09T10:28:19.608Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="ZcPiCpIdhCA4A17xZaet" version="24.6.4" type="device">
+  <diagram name="Página-1" id="D8y7zqsjKJYsQYFzxFkk">
+    <mxGraphModel dx="2675" dy="1105" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zt2GWuzzOL75l6XBszxc-1" value="" style="shape=mxgraph.signs.animals.duck;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="140" y="170" width="105" height="73" as="geometry" />
+        </mxCell>
+        <mxCell id="zt2GWuzzOL75l6XBszxc-2" value="public class Duck&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;protected IFlyBehavior _flyBehavior;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;protected IQuackBehavior _quackBehavior;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;div&gt;public void PerformQuack()&lt;/div&gt;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;_quackBehavior.Quack();&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;public void PerformFly()&lt;/div&gt;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;_flyBehavior.Fly();&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;&lt;/blockquote&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="57.5" y="250" width="270" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="zt2GWuzzOL75l6XBszxc-3" value="parent class" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="170" y="140" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zt2GWuzzOL75l6XBszxc-4" value="" style="shape=mxgraph.signs.animals.duck;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="-67.5" y="520" width="105" height="73" as="geometry" />
+        </mxCell>
+        <mxCell id="zt2GWuzzOL75l6XBszxc-5" value="public class MallardDuck : Duck&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;div&gt;public MallardDuck(&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;IQuackBehavior quack,&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;IFlyBehavior fly)&lt;/div&gt;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;_flyBehavior = fly;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;_quackBehavior = quack;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;&lt;/blockquote&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-150" y="600" width="280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="zt2GWuzzOL75l6XBszxc-6" value="child class" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="-37.5" y="490" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zt2GWuzzOL75l6XBszxc-7" value="" style="shape=mxgraph.signs.animals.duck;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="361.5" y="520" width="105" height="73" as="geometry" />
+        </mxCell>
+        <mxCell id="zt2GWuzzOL75l6XBszxc-9" value="child class" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="386.5" y="490" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zt2GWuzzOL75l6XBszxc-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.376;entryY=1.009;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="zt2GWuzzOL75l6XBszxc-4" target="zt2GWuzzOL75l6XBszxc-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zt2GWuzzOL75l6XBszxc-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.672;entryY=1.014;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="zt2GWuzzOL75l6XBszxc-7" target="zt2GWuzzOL75l6XBszxc-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zt2GWuzzOL75l6XBszxc-12" value="public class RedheadDuck : Duck&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;div&gt;public RedheadDuck(&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;IQuackBehavior quack,&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;IFlyBehavior fly)&lt;/div&gt;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;_flyBehavior = fly;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;_quackBehavior = quack;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;&lt;/blockquote&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="286.5" y="600" width="280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="zt2GWuzzOL75l6XBszxc-13" value="FlyWithWings" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF6666;fontSize=11;rotation=15;" vertex="1" parent="1">
+          <mxGeometry x="30" y="675" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zt2GWuzzOL75l6XBszxc-14" value="QuackLoudly" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF6666;fontSize=11;rotation=15;" vertex="1" parent="1">
+          <mxGeometry x="37.5" y="645" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zt2GWuzzOL75l6XBszxc-15" value="CannotFly" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF6666;fontSize=11;rotation=15;" vertex="1" parent="1">
+          <mxGeometry x="460" y="675" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zt2GWuzzOL75l6XBszxc-16" value="MuteQuack" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF6666;fontSize=11;rotation=15;" vertex="1" parent="1">
+          <mxGeometry x="470" y="645" width="80" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
