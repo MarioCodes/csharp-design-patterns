@@ -15,7 +15,7 @@
 Define una familia de algoritmos, encapsulando cada uno de ellos y los hace intercambiables en runtime (configuración), independientemente de los clientes que los utilizan.  
 Útil para cambiar algoritmos en tiempo de ejecución y elegir la estrategia más adecuada según el contexto. 
 
-![strategy pattern class diagram](_images/strategy_pattern.drawio.png)
+![strategy pattern class diagram](_images/excalidraw/strategy_pattern_background.png)
 
 *code example - how to use it!*
 ~~~ csharp
@@ -40,7 +40,7 @@ Define una relacion, de una a muchos, entre un sujeto con estado y sus observado
 
 Facilita la notificación de cambios en un objeto a múltiples observadores. 
 
-![observer pattern class diagram](_images/observer_pattern.drawio.png)
+![observer pattern class diagram](_images/excalidraw/observer_pattern_background.png)
 
 *code example - how to use it!*
 ~~~ csharp
@@ -63,7 +63,7 @@ weatherData.SetMeasurements(40, 25, 28.5f);
 Permite añadir nuevas funcionalidades a objetos de forma dinámica sin modificar su estructura interna.  
 Funciona mediante wrappers que agregan comportamientos antes o después de delegar llamadas al objeto original.  
 
-![decorator pattern class diagram](_images/decorator_pattern.drawio.png)
+![decorator pattern class diagram](_images/excalidraw/decorator_pattern_background.png)
 
 *code example - how to use it!*
 ~~~ csharp
@@ -90,7 +90,7 @@ Define una interfaz para crear un objeto, pero deja a las subclases decidir que 
 Útil para cuando se trabaja con familias de objetos relacionados y se desea que todos los objetos que tienen que cooperar entre sí, provengan de la misma familia o tipo.  
 Permite utilizar diferentes implementaciones para diferentes situaciones.  
 
-![factory pattern class diagram](_images/factory_pattern.drawio.png)
+![factory pattern class diagram](_images/excalidraw/factory_pattern_background.png)
 
 *code example - how to use it*
 ~~~ csharp
@@ -128,7 +128,7 @@ Envuelve una solicitud como un objeto. Esto permite parametrizar objetos con dif
 
 Útil cuando los productores son diferentes entre sí. 
 
-![command pattern class diagram](_images/command_pattern.drawio.png)
+![command pattern class diagram](_images/excalidraw/command_pattern_background.png)
 
 *code example - how to use it!*
 ~~~ csharp
@@ -168,7 +168,7 @@ remote.OffButtonWasPushed(2); // garage door closes
 ## Adapter pattern
 Permite adaptar un diseño que espera una interfaz, a una clase que implementa otra interfaz completamente diferente. Permite trabajar juntas a clases que de otro modo serían incompatibles.
 
-![adapter pattern class diagram](_images/adapter_pattern.drawio.png)
+![adapter pattern class diagram](_images/excalidraw/adapter_pattern_background.png)
 
 *code example - how to use it!*
 ~~~ csharp
@@ -188,7 +188,7 @@ hiddenTurkey.Quack();
 ## Façade pattern
 Wrapper de objetos, parecido al adapter pero el objetivo del façade es simplificar la interfaz. Este patrón esconde la complejidad de una o más clases detrás de una fachada. 
 
-![facade pattern class diagram](_images/facade_pattern.drawio.png)
+![facade pattern class diagram](_images/excalidraw/facade_pattern_background.png)
 
 ## Template Method pattern
 Define el esqueleto de un algoritmo defiriendo algunos pasos a sus subclases. Permite a las subclases redefinir algunos pasos del algoritmo sin cambiar la estructura interna del mismo.  
@@ -240,7 +240,7 @@ They're similar in their purposes.
 Proporciona una manera de acceder secuencialmente a los elementos de un objeto, sin exponer su representación subyacente (nos da igual igual si es una List o un Array o su implementación).  
 Encapsula la lógica de navegación. 
 
-![iterator pattern class diagram](_images/iterator_pattern.drawio.png)
+![iterator pattern class diagram](_images/excalidraw/iterator_pattern_background.png)
 
 *code example - how to use it*
 ~~~ csharp
@@ -272,7 +272,7 @@ private static void PrintMenu(Iterator iterator)
 ## State pattern
 Permite hacer un seguimiento del estado interno de un objeto y alterar el comportamiento del objeto en función de este estado interno.
 
-![state pattern class diagram](_images/state_pattern.drawio.png)
+![state pattern class diagram](_images/excalidraw/state_pattern_background.png)
 
 *code example - how to use it*
 ~~~ csharp
