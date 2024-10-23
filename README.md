@@ -40,6 +40,8 @@ Define el esqueleto de un algoritmo defiriendo algunos pasos a sus subclases. Pe
 
 There's a version with a *hook* where it's possible to hide or omit parts of the algorithm depending on the subclass. 
 
+![template pattern class diagram](_images/excalidraw/template_pattern_background.png)
+
 *code example - how to **define** it*
 ~~~ csharp
 // abstract parent class which has the template method
