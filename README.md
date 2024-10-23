@@ -7,7 +7,7 @@
 ## Design principles  
 * Identify the aspects of your application that vary and separate them from what stays the same
 * Program to an interface, not an implementation
-* Favor composition over inheritance -> has-a may be better than is-a
+* Favor composition over inheritance - `has-a` may be better than `is-a`
 * Strive for loosely coupled designs between objects that interact
 * Classes should be open for extension, but closed for modification
 
@@ -34,6 +34,104 @@ duck3.PerformQuack(); // squeaks
 duck3.PerformFly(); // flying with wings
 duck3.Display(); // looks like a Redhead Duck
 ~~~
+
+## Template Method pattern
+Define el esqueleto de un algoritmo defiriendo algunos pasos a sus subclases. Permite a las subclases redefinir algunos pasos del algoritmo sin cambiar la estructura interna del mismo.  
+
+There's a version with a *hook* where it's possible to hide or omit parts of the algorithm depending on the subclass. 
+
+*code example - how to **define** it*
+~~~ csharp
+// abstract parent class which has the template method
+public abstract class CaffeineBeverage
+{
+  protected abstract void Brew();
+  protected abstract void AddCondiments();
+
+  // this is the template method itself. it's the method we call from the outside
+  // we mark as abstract the methods that are supplied by subclasses 
+  public void PrepareRecipe()
+  {
+    BoilWater();
+    Brew();
+    PourInCup();
+    AddCondiments();
+  }
+
+  private void BoilWater() { ... }
+  private void PourInCup() { ... }
+}
+
+public class Coffee : CaffeineBeverage
+{
+  protected override void Brew() { ... }
+  protected override void AddCondiments() { ... }
+}
+
+public class Tea : CaffeineBeverage
+{
+  protected override void Brew() { ... }
+  protected override void AddCondiments() { ... }
+}
+~~~
+
+### Strategy vs template method patterns
+They're similar in their purposes.  
+
+* strategy pattern: <ins>define una familia de algoritmos</ins> y los hace intercambiables en runtime. Como cada algoritmo está encapsulado, el cliente puede usar varios algoritmos fácilmente. Es más flexible porque usa composición.
+* template method pattern: define la base de un algoritmo, pero delega partes del trabajo en sus subclases. <ins>Permite tener diferentes implementaciones de un algoritmo</ins>, pero mantener el control sobre su estructura. Evita la repetición de código.
+
+## State pattern
+Permite hacer un seguimiento del estado interno de un objeto y alterar el comportamiento del objeto en función de este estado interno.
+
+![state pattern class diagram](_images/excalidraw/state_pattern_background.png)
+
+*code example - how to use it*
+~~~ csharp
+public class GumballMachine : IGumballMachine
+{
+  // possible states
+  // the states themselves encapsulate all details on how to execute operations
+  public IState _noQuarterState {get; set;}
+  public IState _hasQuarterState {get; set;}
+  public IState _soldState {get; set;}
+
+  // current state
+  public IState _state {get; set;}
+
+  public GumballMachine()
+  {
+    _noQuarterState = new NoQuarterState(this);
+    _hasQuarterState = new HasQuarterState(this);
+    _soldState = new SoldState(this);
+  }
+
+  // we delegate all operations to the state itself
+  public void InsertQuarter()
+  {
+    _state.InsertQuarter();
+  }
+
+  public void TurnCrank()
+  {
+    _state.TurnCrank();
+  }
+}
+~~~
+
+*from the outside of the context there's no visibility to the internal state*
+~~~ csharp
+IGumballMachine machine = new GumballMachine(1);
+machine.InsertQuarter();
+machine.TurnCrank();
+machine.ReleaseBall();
+~~~
+
+### Strategy vs state method patterns
+They're similar but they differ in their purposes.  
+
+* strategy pattern: <ins>define una familia de algoritmos o estrategias</ins>. Se pueden cambiar en runtime, pero por lo general siempre hay un algoritmo o estrategia más apropiado para contexto y es raro que cambie.  
+* state pattern: <ins>define una familia de comportamientos</ins> encapsulados en estados. Estos estados cambian en función del estado interno del contexto. Todo queda encapsulado dentro del contexto. El cliente no sabe nada del estado interno del contexto.
 
 ## Observer pattern
 Define una relacion, de una a muchos, entre un sujeto con estado y sus observadores de manera que, cuando el sujeto cambia de estado, todos sus observadores son notificados y actualizados automáticamente.  
@@ -189,53 +287,6 @@ hiddenTurkey.Quack();
 Wrapper de objetos, parecido al adapter pero el objetivo del façade es simplificar la interfaz. Este patrón esconde la complejidad de una o más clases detrás de una fachada. 
 
 ![facade pattern class diagram](_images/excalidraw/facade_pattern_background.png)
-
-## Template Method pattern
-Define el esqueleto de un algoritmo defiriendo algunos pasos a sus subclases. Permite a las subclases redefinir algunos pasos del algoritmo sin cambiar la estructura interna del mismo.  
-
-There's a version with a *hook* where it's possible to hide or omit parts of the algorithm depending on the subclass. 
-
-*code example - how to **define** it*
-~~~ csharp
-// abstract parent class which has the template method
-public abstract class CaffeineBeverage
-{
-  protected abstract void Brew();
-  protected abstract void AddCondiments();
-
-  // this is the template method itself. it's the method we call from the outside
-  // we mark as abstract the methods that are supplied by subclasses 
-  public void PrepareRecipe()
-  {
-    BoilWater();
-    Brew();
-    PourInCup();
-    AddCondiments();
-  }
-
-  private void BoilWater() { ... }
-  private void PourInCup() { ... }
-}
-
-public class Coffee : CaffeineBeverage
-{
-  protected override void Brew() { ... }
-  protected override void AddCondiments() { ... }
-}
-
-public class Tea : CaffeineBeverage
-{
-  protected override void Brew() { ... }
-  protected override void AddCondiments() { ... }
-}
-~~~
-
-### Strategy vs template method patterns
-They're similar in their purposes.  
-
-* strategy pattern: <ins>define una familia de algoritmos</ins> y los hace intercambiables en runtime. Como cada algoritmo está encapsulado, el cliente puede usar varios algoritmos fácilmente. Es más flexible porque usa composición.
-* template method pattern: define la base de un algoritmo, pero delega partes del trabajo en sus subclases. Permite tener <ins>diferentes implementaciones de un algoritmo</ins>, pero mantener el control sobre su estructura. Evita la repetición de código.
-
 ## Iterator pattern
 Proporciona una manera de acceder secuencialmente a los elementos de un objeto, sin exponer su representación subyacente (nos da igual igual si es una List o un Array o su implementación).  
 Encapsula la lógica de navegación. 
@@ -268,59 +319,6 @@ private static void PrintMenu(Iterator iterator)
     }
 }
 ~~~
-
-## State pattern
-Permite hacer un seguimiento del estado interno de un objeto y alterar el comportamiento del objeto en función de este estado interno.
-
-![state pattern class diagram](_images/excalidraw/state_pattern_background.png)
-
-*code example - how to use it*
-~~~ csharp
-public class GumballMachine : IGumballMachine
-{
-  // possible states
-  // the states themselves encapsulate all details on how to execute operations
-  public IState _noQuarterState {get; set;}
-  public IState _hasQuarterState {get; set;}
-  public IState _soldState {get; set;}
-
-  // current state
-  public IState _state {get; set;}
-
-  public GumballMachine()
-  {
-    _noQuarterState = new NoQuarterState(this);
-    _hasQuarterState = new HasQuarterState(this);
-    _soldState = new SoldState(this);
-  }
-
-  // we delegate all operations to the state itself
-  public void InsertQuarter()
-  {
-    _state.InsertQuarter();
-  }
-
-  public void TurnCrank()
-  {
-    _state.TurnCrank();
-  }
-}
-~~~
-
-*from the outside of the context there's no visibility to the internal state*
-~~~ csharp
-IGumballMachine machine = new GumballMachine(1);
-machine.InsertQuarter();
-machine.TurnCrank();
-machine.ReleaseBall();
-~~~
-
-### Strategy vs state method patterns
-They're similar but they differ in their purposes.  
-
-* strategy pattern: <ins>define una familia de algoritmos o estrategias</ins>. Se pueden cambiar en runtime, pero por lo general siempre hay un algoritmo o estrategia más apropiado para contexto y es raro que cambie.  
-* state pattern: <ing>define una familia de comportamientos</ins> encapsulados en estados. Estos estados cambian en función del estado interno del contexto. Todo queda encapsulado dentro del contexto. El cliente no sabe nada del estado interno del contexto.
-
 ## Proxy pattern
 Establece un placeholder para otro objeto y controlar el acceso a éste objeto. 
 
