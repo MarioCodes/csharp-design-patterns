@@ -1,3 +1,5 @@
+using BasicBuilder.Director;
+using BasicBuilder.Director.interfaces;
 using builderPattern.Builder;
 using builderPattern.Builder.interfaces;
 using builderPattern.Models;
@@ -10,19 +12,10 @@ namespace builderPattern
     {
         public static void Main(string[] args)
         {
-            ICarBuilder carBuilder = new CarBuilder();
-            Car myCar = carBuilder.WithMake("Renault")
-                .WithModel("Clio")
-                .WithYear(2020)
-                .Build();
+            ICarBuilder builder = new CarBuilder();
+            ICarDirector director = new CarDirector();
 
-            Car anotherCar = new Car
-            {
-                Make = "Peugeot",
-                Model = "208",
-                Year = 2021
-            };
-
+            Car myCar = director.ConstructSportsCar(builder);
             Console.WriteLine($"built car -> {JsonConvert.SerializeObject(myCar)}");
         }
 
