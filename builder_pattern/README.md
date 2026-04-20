@@ -1,23 +1,94 @@
-# Strategy Pattern
+## Builder pattern
+Patrón creacional que permite construir objetos de una gran complejidad, paso a paso. Permite producir diferentes tipos y representaciones de un objeto usando el mismo código para todos, así como validar objetos de gran complejidad.  
+El patrón organiza la construcción en una serie de pasos opcionales. No necesitas llamarlos todos, solo los que hagan falta para la configuración particular de ese objeto.  
+Una pista para ver si renta implementarlo es si tenemos constructores interminables en código.  
 
-We decouple the behaviour from the class. The duck doesn't know implementation details about how to fly. This behaviour lives in a separate class - one that implements this behavior's interface. (IFlyBehavior - FlyWithWings).
-This behavior may be changed at runtime!
+* `Builder interface` declara los pasos de construccion comunes para todos los tipos
+* `Builder class` dispone de diferentes pasos según lo que construyamos. Puede producir productos que no sigan la interfaz común. De él es de quien se obtiene el producto final. Permite la validación.  
+* `Product` son los objetos resultantes. Los productos producidos por diferentes builders no pertenencen a la misma jerarquia o interfaz
+* `Director` define el orden en el que llamar cada paso, para que puedas reutilizar configuraciones de productos
 
-The key is that a Duck delegates its flying behavior, instead of using defined flying methods inside its class. 
-
-The strategy pattern defines a family of algorithms, encapsulates each one and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it. 
-
-![alt text here](images/strategy_pattern.drawio.png)
-
-*code example - how to use it!*
 ~~~ csharp
-Duck duck = new MallardDuck(new Quack(), new FlyNoWay());
-duck.PerformQuack(); // quacks like a duck
-duck.PerformFly(); // cannot fly
-duck.Display(); // looks like a MallardDuck
+public class Car
+{
+	public string Make { get; set; }
+	public string Model { get; set; }
+	public int Year { get; set; }
+}
+~~~
 
-Duck duck2 = new RedheadDuck(new Squak(), new FlyWithWings());
-duck2.PerformQuack(); // squeaks
-duck2.PerformFly(); // flying with wings
-duck2.Display(); // looks like a Redhead Duck
+~~~ csharp
+public interface ICarBuilder
+{
+	public ICarBuilder WithMake(string make);
+	public ICarBuilder WithModel(string model);
+	public ICarBuilder WithYear(int year);
+	public Car Build();
+}
+~~~
+
+~~~ csharp
+public class CarBuilder : ICarBuilder
+{
+	private Car _car = new Car();
+	
+	public ICarBuilder WithMake(string make)
+	{
+	    _car.Make = make;
+	    return this;
+	}
+	
+	public ICarBuilder WithModel(string model)
+	{
+	    _car.Model = model;
+	    return this;
+	}
+	
+	public ICarBuilder WithYear(int year)
+	{
+	    _car.Year = year;
+	    return this;
+	}
+	
+	public Car Build()
+	{
+	    // you can force required validation here
+	    if(_car.Year < 1886)
+	    {
+	        throw new ArgumentException("Year must be 1886 or later.");
+	    }
+	
+	    if(string.IsNullOrEmpty(_car.Make))
+	    {
+	        throw new ArgumentException("Make is required.");
+	    }
+	
+	    return _car;
+	}
+}
+~~~
+
+~~~ csharp
+/*
+ * The final product is often retrieved from a builder
+ * since the director isn't aware of concrete
+ * builders and products
+ */
+public class CarDirector
+{
+	public Car ConstructSportsCar(ICarBuilder builder)
+	{
+		builder.WithMake("Porsche")
+			   .WithModel("911")
+			   .WithYear(2024);
+		return builder.Build();
+	}
+}
+~~~
+
+~~~ csharp
+// usage
+ICarBuilder builder = new CarBuilder();
+ICarDirector director = new CarDirector();
+Car myCar = director.ConstructSportsCar(builder);
 ~~~
