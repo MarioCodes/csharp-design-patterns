@@ -8,6 +8,47 @@
 A hands-on collection of Gang of Four design patterns implemented in C# with Exalidraw diagrams and examples.  
 Perfect for .NET developers preparing for interviews, studying software architecture, or looking for clean, copy-paste-ready pattern implementations.  
 
+
+## 📋 Patterns Included
+ 
+### Creational Patterns
+ 
+| Pattern | Description | Code |
+|---------|-------------|------|
+| **Singleton** | Ensures a single instance with global access point | [`singleton_pattern/`](singleton_pattern/) |
+| **Factory Method** | Delegates object creation to subclasses | [`factory_pattern/`](factory_pattern/) |
+| **Builder** | Constructs complex objects step by step with validation | [`builder_pattern/`](builder_pattern/) |
+ 
+### Structural Patterns
+ 
+| Pattern | Description | Code |
+|---------|-------------|------|
+| **Adapter** | Makes incompatible interfaces work together | [`adapter_pattern/`](adapter_pattern/) |
+| **Bridge** | Decouples abstraction from implementation to avoid class explosion | [`bridge_pattern/`](bridge_pattern/) |
+| **Composite** | Composes objects into tree structures | [`composite_pattern/`](composite_pattern/) |
+| **Decorator** | Adds behavior dynamically via wrappers | [`decorator_pattern/`](decorator_pattern/) |
+| **Façade** | Simplifies a complex subsystem behind a single interface | [`façade_pattern/`](façade_pattern/) |
+| **Proxy** | Controls access to another object (includes Remote Proxy) | [`proxy_pattern/`](proxy_pattern/) |
+ 
+### Behavioral Patterns
+ 
+| Pattern | Description | Code |
+|---------|-------------|------|
+| **Strategy** | Swaps algorithms at runtime via composition | [`strategy_pattern/`](strategy_pattern/) |
+| **Template Method** | Defines algorithm skeleton, lets subclasses fill in steps | [`template_method_pattern/`](template_method_pattern/) |
+| **Observer** | Notifies multiple objects when state changes | [`observer_pattern/`](observer_pattern/) |
+| **Command** | Encapsulates requests as objects (supports undo/redo) | [`command_pattern/`](command_pattern/) |
+| **State** | Alters behavior based on internal state changes | [`state_pattern/`](state_pattern/) |
+| **Iterator** | Traverses collections without exposing internals | [`iterator_pattern/`](iterator_pattern/) |
+ 
+### Other Patterns
+ 
+| Pattern | Description | Code |
+|---------|-------------|------|
+| **Repository** | Abstracts data access behind a clean interface | [`repository_pattern/`](repository_pattern/) |
+
+---
+
 ## ⚡ Quick Start
 ~~~ bash
 git clone https://github.com/MarioCodes/csharp-design-patterns.git
@@ -15,6 +56,8 @@ cd csharp-design-patterns
 ~~~
 
 Open any pattern folder in Visual Studio or VS Code and run the examples. 
+
+---
 
 ## 🧠 Design Principles
  
