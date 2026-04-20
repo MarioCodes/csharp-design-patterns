@@ -1,6 +1,4 @@
-# Strategy Pattern
+## Façade pattern
+Wrapper de objetos, parecido al adapter pero el objetivo del façade es simplificar la interfaz. Este patrón esconde la complejidad de una o más clases detrás de una fachada. 
 
-We decouple the behaviour from the class. The duck doesn't know implementation details about how to fly. This behaviour lives in a separate class - one that implements this behavior's interface. (IFlyBehavior - FlyWithWings).
-This behavior may be changed at runtime!
-
-The key is that a Duck delegates its flying behavior, instead of using defined flying methods inside its class. 
+![facade pattern class diagram](../_images/excalidraw/facade_pattern_background.png)
