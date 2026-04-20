@@ -27,3 +27,10 @@ They're similar in their purposes.
 
 * strategy pattern: <ins>define una familia de algoritmos</ins> y los hace intercambiables en runtime. Como cada algoritmo está encapsulado, el cliente puede usar varios algoritmos fácilmente. Es más flexible porque usa composición.
 * template method pattern: define la base de un algoritmo, pero delega partes del trabajo en sus subclases. <ins>Permite tener diferentes implementaciones de un algoritmo</ins>, pero mantener el control sobre su estructura. Evita la repetición de código.
+
+### Strategy vs state method patterns
+They're similar but they differ in their purposes.  
+
+* strategy pattern: <ins>define una familia de algoritmos o estrategias</ins>. Se pueden cambiar en runtime, pero por lo general siempre hay un algoritmo o estrategia más apropiado para contexto y es raro que cambie.  
+* state pattern: <ins>define una familia de comportamientos</ins> encapsulados en estados. Estos estados cambian en función del estado interno del contexto. Todo queda encapsulado dentro del contexto. El cliente no sabe nada del estado interno del contexto.
+
