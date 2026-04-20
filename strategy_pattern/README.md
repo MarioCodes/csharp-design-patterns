@@ -21,3 +21,9 @@ duck3.PerformQuack(); // squeaks
 duck3.PerformFly(); // flying with wings
 duck3.Display(); // looks like a Redhead Duck
 ~~~
+
+### Strategy vs template method patterns
+They're similar in their purposes.  
+
+* strategy pattern: <ins>define una familia de algoritmos</ins> y los hace intercambiables en runtime. Como cada algoritmo está encapsulado, el cliente puede usar varios algoritmos fácilmente. Es más flexible porque usa composición.
+* template method pattern: define la base de un algoritmo, pero delega partes del trabajo en sus subclases. <ins>Permite tener diferentes implementaciones de un algoritmo</ins>, pero mantener el control sobre su estructura. Evita la repetición de código.
