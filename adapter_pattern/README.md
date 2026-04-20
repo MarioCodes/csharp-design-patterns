@@ -1,6 +1,19 @@
-# Strategy Pattern
+## Adapter pattern
+Permite adaptar un diseño que espera una interfaz, a una clase que implementa otra interfaz completamente diferente. Permite trabajar juntas a clases que de otro modo serían incompatibles.
 
-We decouple the behaviour from the class. The duck doesn't know implementation details about how to fly. This behaviour lives in a separate class - one that implements this behavior's interface. (IFlyBehavior - FlyWithWings).
-This behavior may be changed at runtime!
+![adapter pattern class diagram](../_images/excalidraw/adapter_pattern_background.png)
 
-The key is that a Duck delegates its flying behavior, instead of using defined flying methods inside its class. 
+*code example - how to use it!*
+~~~ csharp
+// we have a Duck interface which Quacks
+Duck duck = new MallardDuck();
+duck.Quack();
+
+// we have a Turkey interface which Gobbles
+Turkey turkey = new WildTurkey();
+turkey.Gobble();
+
+// now we have a Turkey which knows how to Quack
+Duck hiddenTurkey = new TurkeyAdapter(turkey);
+hiddenTurkey.Quack();
+~~~
