@@ -1,23 +1,41 @@
-# Strategy Pattern
+## Command pattern
+Envuelve una solicitud como un objeto. Esto permite parametrizar objetos con diferentes solicitudes. Facilita la implementación de deshacer operaciones y rehacerlas.   
 
-We decouple the behaviour from the class. The duck doesn't know implementation details about how to fly. This behaviour lives in a separate class - one that implements this behavior's interface. (IFlyBehavior - FlyWithWings).
-This behavior may be changed at runtime!
+Útil cuando los productores son diferentes entre sí. 
 
-The key is that a Duck delegates its flying behavior, instead of using defined flying methods inside its class. 
-
-The strategy pattern defines a family of algorithms, encapsulates each one and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it. 
-
-![alt text here](images/strategy_pattern.drawio.png)
+![command pattern class diagram](../_images/excalidraw/command_pattern_background.png)
 
 *code example - how to use it!*
 ~~~ csharp
-Duck duck = new MallardDuck(new Quack(), new FlyNoWay());
-duck.PerformQuack(); // quacks like a duck
-duck.PerformFly(); // cannot fly
-duck.Display(); // looks like a MallardDuck
+// set up
+RemoteControl remote = new RemoteControl();
 
-Duck duck2 = new RedheadDuck(new Squak(), new FlyWithWings());
-duck2.PerformQuack(); // squeaks
-duck2.PerformFly(); // flying with wings
-duck2.Display(); // looks like a Redhead Duck
+Light livingRoomLight = new Light("living room");
+Light kitchenLight = new Light("kitchen");
+GarageDoor garageDoor = new GarageDoor("");
+
+// light commands
+var livingRoomLightOn = new LightOnCommand(livingRoomLight);
+var livingRoomLightOff = new LightOffCommand(livingRoomLight);
+var kitchenLightOn = new LightOnCommand(kitchenLight);
+var kitchenLightOff = new LightOffCommand(kitchenLight);
+
+// garage door commands
+var garageDoorUp = new GarageDoorUpCommand(garageDoor);
+var garageDoorDown = new GarageDoorDownCommand(garageDoor);
+
+// load commands into programmable remote
+remote.SetCommand(0, livingRoomLightOn, livingRoomLightOff);
+remote.SetCommand(1, kitchenLightOn, kitchenLightOff);
+remote.SetCommand(2, garageDoorUp, garageDoorDown);
+
+// push buttons
+remote.OnButtonWasPushed(0); // living room light is on
+remote.OffButtonWasPushed(0); // living room light is off
+
+remote.OnButtonWasPushed(1); // kitchen light is on
+remote.OffButtonWasPushed(1); // kitchen light is off
+
+remote.OnButtonWasPushed(2); // garage door opens
+remote.OffButtonWasPushed(2); // garage door closes
 ~~~
